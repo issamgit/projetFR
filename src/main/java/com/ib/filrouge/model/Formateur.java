@@ -2,6 +2,9 @@ package com.ib.filrouge.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Formateur  extends Personne{
 	
 	private long experience;
