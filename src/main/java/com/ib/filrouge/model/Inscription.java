@@ -20,19 +20,34 @@ public class Inscription {
 	private Session session;
 	@ManyToOne
 	private Etudiant etudiant;
+	
 	public Inscription() {
 		
 	}
-	public Inscription(LocalDate dateInscription, boolean paiement) {
+	public Inscription(LocalDate dateInscription, boolean paiement, Etudiant etudiant) {
 	
 		this.dateInscription = dateInscription;
 		this.paiement = paiement;
+		this.etudiant=etudiant;
 	}
+	
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
+	}
+	public Session getSession() {
+		return session;
+	}
+	public void setSession(Session session) {
+		this.session = session;
+	}
+	public Etudiant getEtudiant() {
+		return etudiant;
+	}
+	public void setEtudiant(Etudiant etudiant) {
+		this.etudiant = etudiant;
 	}
 	public LocalDate getDateInscription() {
 		return dateInscription;

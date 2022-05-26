@@ -36,11 +36,28 @@ public class Etudiant extends Personne {
 	public void setNomEntreprise(String nomEntreprise) {
 		this.nomEntreprise = nomEntreprise;
 	}
+	
+	public Etudiant(Long id, String nom, String prenom, String email, String telephone, LocalDate dateDeNaissance,
+			String motDePasse, String nomEntreprise, String adresse, boolean isParticulier, long scorePrerequis,
+			Collection<Inscription> inscriptions) {
+		super(id, nom, prenom, email, telephone, dateDeNaissance, motDePasse);
+		this.nomEntreprise = nomEntreprise;
+		this.adresse = adresse;
+		this.isParticulier = isParticulier;
+		this.scorePrerequis = scorePrerequis;
+		this.inscriptions = inscriptions;
+	}
 	public String getAdresse() {
 		return adresse;
 	}
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
+	}
+	public Collection<Inscription> getInscriptions() {
+		return inscriptions;
+	}
+	public void setInscriptions(Collection<Inscription> inscriptions) {
+		this.inscriptions = inscriptions;
 	}
 	public boolean isParticulier() {
 		return isParticulier;

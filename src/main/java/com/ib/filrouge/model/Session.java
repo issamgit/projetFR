@@ -31,11 +31,27 @@ public class Session {
 	public Session() {
 		
 	}
+	
+	public Session(LocalDate dateDebut, LocalDate detaFin, boolean isInter, boolean logistique,
+			Collection<Inscription> inscriptions) {
+		super();
+		this.dateDebut = dateDebut;
+		this.detaFin = detaFin;
+		this.isInter = isInter;
+		this.logistique = logistique;
+		this.inscriptions = inscriptions;
+	}
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
+	}
+	public Collection<Inscription> getInscriptions() {
+		return inscriptions;
+	}
+	public void setInscriptions(Collection<Inscription> inscriptions) {
+		this.inscriptions = inscriptions;
 	}
 	public LocalDate getDateDebut() {
 		return dateDebut;
