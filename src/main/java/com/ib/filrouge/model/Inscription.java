@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Inscription {
@@ -15,6 +16,10 @@ public class Inscription {
 	private long id;
 	private LocalDate dateInscription;
 	private boolean paiement;
+	@ManyToOne
+	private Session session;
+	@ManyToOne
+	private Etudiant etudiant;
 	public Inscription() {
 		
 	}

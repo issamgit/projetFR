@@ -1,11 +1,13 @@
 package com.ib.filrouge.model;
 
 import java.time.LocalDate;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Session {
@@ -17,6 +19,8 @@ public class Session {
 	private LocalDate detaFin;
 	private boolean isInter;
 	private boolean logistique;
+	@OneToMany(mappedBy = "session")
+	private Collection<Inscription> inscriptions;
 	public Session(LocalDate dateDebut, LocalDate detaFin, boolean isInter, boolean logistique) {
 		
 		this.dateDebut = dateDebut;
