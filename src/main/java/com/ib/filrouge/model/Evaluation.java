@@ -13,7 +13,21 @@ public class Evaluation {
 	private long id;
 	private String question;
 	private int scoreEval;
+	private Etudiant etudiant;
 	
+	
+	public Evaluation(String question, int scoreEval, Etudiant etudiant) {
+		super();
+		this.question = question;
+		this.scoreEval = scoreEval;
+		this.etudiant = etudiant;
+	}
+	public Etudiant getEtudiant() {
+		return etudiant;
+	}
+	public void setEtudiant(Etudiant etudiant) {
+		this.etudiant = etudiant;
+	}
 	public Evaluation() {
 		
 	}

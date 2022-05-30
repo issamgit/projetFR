@@ -21,6 +21,7 @@ public class Session {
 	private boolean logistique;
 	@OneToMany(mappedBy = "session")
 	private Collection<Inscription> inscriptions;
+	private Formateur formateur;
 	public Session(LocalDate dateDebut, LocalDate detaFin, boolean isInter, boolean logistique) {
 		
 		this.dateDebut = dateDebut;
