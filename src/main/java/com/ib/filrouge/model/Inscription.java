@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 public class Inscription {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private LocalDate dateInscription;
 	private boolean paiement;

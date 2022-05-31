@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Etudiant extends Personne {
@@ -18,9 +19,31 @@ public class Etudiant extends Personne {
 	private Collection<Inscription> inscriptions;
 	@ManyToMany
 	private Collection<Evaluation> evaluations;
+	@ManyToOne
+	private Responsable responsable;
+	@ManyToOne
+	private Formateur formateur;
 	
 	
 	
+	public Collection<Evaluation> getEvaluations() {
+		return evaluations;
+	}
+	public void setEvaluations(Collection<Evaluation> evaluations) {
+		this.evaluations = evaluations;
+	}
+	public Responsable getResponsable() {
+		return responsable;
+	}
+	public void setResponsable(Responsable responsable) {
+		this.responsable = responsable;
+	}
+	public Formateur getFormateur() {
+		return formateur;
+	}
+	public void setFormateur(Formateur formateur) {
+		this.formateur = formateur;
+	}
 	public Etudiant() {
 		
 	}

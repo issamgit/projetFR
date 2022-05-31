@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 public class Formation {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private float prix;
 	private String contenu;

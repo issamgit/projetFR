@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -15,8 +16,10 @@ public class Formateur  extends Personne{
 	@OneToMany
 	private List<Session> sessions;
 	
-	
+	@OneToMany(mappedBy = "formateur")
 	private List<Etudiant> etudiants;
+	@ManyToOne
+	private Responsable responsable;
 	
 	
 	public List<Etudiant> getEtudiants() {

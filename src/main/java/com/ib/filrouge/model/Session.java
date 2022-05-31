@@ -18,7 +18,7 @@ import javax.persistence.OneToOne;
 public class Session {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE )
+	@GeneratedValue(strategy = GenerationType.IDENTITY )
 	private long id;
 	private LocalDate dateDebut;
 	private LocalDate detaFin;
@@ -30,6 +30,26 @@ public class Session {
 	
 	@OneToMany(mappedBy = "session")
 	private Collection<Inscription> inscriptions;
+	@ManyToOne
+	private Formation formation;
+	public Salle getSalle() {
+		return salle;
+	}
+	public void setSalle(Salle salle) {
+		this.salle = salle;
+	}
+	public Collection<Evaluation> getCollection() {
+		return collection;
+	}
+	public void setCollection(Collection<Evaluation> collection) {
+		this.collection = collection;
+	}
+	public Formateur getFormateur() {
+		return formateur;
+	}
+	public void setFormateur(Formateur formateur) {
+		this.formateur = formateur;
+	}
 	@OneToMany(mappedBy = "session")
 	private Collection<Evaluation> collection;
 	@ManyToOne
