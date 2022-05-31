@@ -20,11 +20,12 @@ public class Evaluation {
 	private Session session;
 	
 	
-	public Evaluation(String question, int scoreEval, Etudiant etudiant) {
-		super();
+	public Evaluation(String question, int scoreEval, Etudiant etudiant,Session session) {
+		
 		this.question = question;
 		this.scoreEval = scoreEval;
 		this.etudiant = etudiant;
+		this.session=session;
 	}
 	public Etudiant getEtudiant() {
 		return etudiant;
