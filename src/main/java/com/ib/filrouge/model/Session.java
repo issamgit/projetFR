@@ -2,12 +2,17 @@ package com.ib.filrouge.model;
 
 import java.time.LocalDate;
 import java.util.Collection;
+import java.util.List;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Session {
@@ -19,8 +24,15 @@ public class Session {
 	private LocalDate detaFin;
 	private boolean isInter;
 	private boolean logistique;
+	private boolean active;
+	@OneToOne
+	private Salle salle;
+	
 	@OneToMany(mappedBy = "session")
 	private Collection<Inscription> inscriptions;
+	@OneToMany(mappedBy = "session")
+	private Collection<Evaluation> collection;
+	@ManyToOne
 	private Formateur formateur;
 	public Session(LocalDate dateDebut, LocalDate detaFin, boolean isInter, boolean logistique) {
 		
@@ -77,6 +89,12 @@ public class Session {
 	}
 	public void setLogistique(boolean logistique) {
 		this.logistique = logistique;
+	}
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 	
 	

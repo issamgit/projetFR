@@ -81,6 +81,4 @@ public abstract class Personne {
 	
 	
 	
-	//TEST
-
 }

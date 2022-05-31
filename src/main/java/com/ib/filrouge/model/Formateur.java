@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Formateur  extends Personne{
@@ -11,25 +12,13 @@ public class Formateur  extends Personne{
 	private long experience;
 	private float score;
 	private String expertise;
-	private Session session;
-	public Formateur(Long id, String nom, String prenom, String email, String telephone, LocalDate dateDeNaissance,
-			String motDePasse, long experience, float score, String expertise, Session session,
-			List<Etudiant> etudiants) {
-		super(id, nom, prenom, email, telephone, dateDeNaissance, motDePasse);
-		this.experience = experience;
-		this.score = score;
-		this.expertise = expertise;
-		this.session = session;
-		this.etudiants = etudiants;
-	}
+	@OneToMany
+	private List<Session> sessions;
+	
+	
 	private List<Etudiant> etudiants;
 	
-	public Session getSession() {
-		return session;
-	}
-	public void setSession(Session session) {
-		this.session = session;
-	}
+	
 	public List<Etudiant> getEtudiants() {
 		return etudiants;
 	}
@@ -63,6 +52,12 @@ public class Formateur  extends Personne{
 	}
 	public void setExpertise(String expertise) {
 		this.expertise = expertise;
+	}
+	public List<Session> getSessions() {
+		return sessions;
+	}
+	public void setSessions(List<Session> sessions) {
+		this.sessions = sessions;
 	}
 
 }

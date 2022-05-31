@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.Collection;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Etudiant extends Personne {
@@ -14,8 +14,10 @@ public class Etudiant extends Personne {
 	private String adresse;
 	private boolean isParticulier;
 	private long scorePrerequis;
-	@OneToMany(mappedBy = "etudiant")
+	@ManyToMany
 	private Collection<Inscription> inscriptions;
+	@ManyToMany
+	private Collection<Evaluation> evaluations;
 	
 	
 	
