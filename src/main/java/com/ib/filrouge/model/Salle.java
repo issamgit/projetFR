@@ -13,7 +13,7 @@ public class Salle {
 	private Long id;
 	private String intitule;
 	private int  nbPlace;
-	@OneToOne(mappedBy =  "salle")
+	@OneToOne(mappedBy = "salle")
 	private Session session;
 	public Salle(String intitule, int nbPlace, Session session) {
 		super();

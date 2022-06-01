@@ -6,6 +6,7 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Etudiant extends Personne {
@@ -15,9 +16,9 @@ public class Etudiant extends Personne {
 	private String adresse;
 	private boolean isParticulier;
 	private long scorePrerequis;
-	@ManyToMany
+	@OneToMany(mappedBy = "etudiant")
 	private Collection<Inscription> inscriptions;
-	@ManyToMany
+	@OneToMany(mappedBy = "etudiant")
 	private Collection<Evaluation> evaluations;
 	@ManyToOne
 	private Responsable responsable;

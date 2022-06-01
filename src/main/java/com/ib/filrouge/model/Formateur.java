@@ -13,7 +13,7 @@ public class Formateur  extends Personne{
 	private long experience;
 	private float score;
 	private String expertise;
-	@OneToMany
+	@OneToMany(mappedBy = "formateur")
 	private List<Session> sessions;
 	
 	@OneToMany(mappedBy = "formateur")
