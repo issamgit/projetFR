@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 public class Salle {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	private String intitule;
 	private int  nbPlace;
 	@OneToOne(mappedBy =  "salle")

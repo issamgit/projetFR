@@ -14,7 +14,7 @@ import javax.persistence.InheritanceType;
 public abstract class Personne {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
-	private long id;
+	private Long id;
 	private String nom;
 	private String prenom;
 	private String email;

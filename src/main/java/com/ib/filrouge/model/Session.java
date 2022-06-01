@@ -19,7 +19,7 @@ public class Session {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY )
-	private long id;
+	private Long id;
 	private LocalDate dateDebut;
 	private LocalDate detaFin;
 	private boolean isInter;
