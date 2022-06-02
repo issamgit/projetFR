@@ -2,7 +2,6 @@ package com.ib.filrouge.controller;
 
 import java.util.Collection;
 
-import org.apache.coyote.http11.Http11AprProtocol;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +19,7 @@ public class SessionController {
 	@Autowired
 	private SessionService sessionService;
 	
-	
+	//TEST ISSAM
 	@GetMapping("/sessions")
 	public ResponseEntity<Collection<Session>> getAllSession()
 	{
