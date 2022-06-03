@@ -24,7 +24,7 @@ public class FormationController {
 	
 	@Autowired
 	private FormationService formationService;
-	
+	//ttt
 	//test
 	@GetMapping("/formations")
 	public Collection<Formation> getAllFormation()
