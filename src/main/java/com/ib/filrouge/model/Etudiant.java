@@ -1,7 +1,8 @@
 package com.ib.filrouge.model;
 
 import java.time.LocalDate;
-import java.util.Collection;
+import java.util.List;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
@@ -17,9 +18,9 @@ public class Etudiant extends Personne {
 	private boolean isParticulier;
 	private long scorePrerequis;
 	@OneToMany(mappedBy = "etudiant")
-	private Collection<Inscription> inscriptions;
+	private List<Inscription> inscriptions;
 	@OneToMany(mappedBy = "etudiant")
-	private Collection<Evaluation> evaluations;
+	private List<Evaluation> evaluations;
 	@ManyToOne
 	private Responsable responsable;
 	@ManyToOne
@@ -27,10 +28,10 @@ public class Etudiant extends Personne {
 	
 	
 	
-	public Collection<Evaluation> getEvaluations() {
+	public List<Evaluation> getEvaluations() {
 		return evaluations;
 	}
-	public void setEvaluations(Collection<Evaluation> evaluations) {
+	public void setEvaluations(List<Evaluation> evaluations) {
 		this.evaluations = evaluations;
 	}
 	public Responsable getResponsable() {
@@ -65,7 +66,7 @@ public class Etudiant extends Personne {
 	
 	public Etudiant(Long id, String nom, String prenom, String email, String telephone, LocalDate dateDeNaissance,
 			String motDePasse, String nomEntreprise, String adresse, boolean isParticulier, long scorePrerequis,
-			Collection<Inscription> inscriptions) {
+			List<Inscription> inscriptions) {
 		super(id, nom, prenom, email, telephone, dateDeNaissance, motDePasse);
 		this.nomEntreprise = nomEntreprise;
 		this.adresse = adresse;
@@ -79,10 +80,10 @@ public class Etudiant extends Personne {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-	public Collection<Inscription> getInscriptions() {
+	public List<Inscription> getInscriptions() {
 		return inscriptions;
 	}
-	public void setInscriptions(Collection<Inscription> inscriptions) {
+	public void setInscriptions(List<Inscription> inscriptions) {
 		this.inscriptions = inscriptions;
 	}
 	public boolean isParticulier() {

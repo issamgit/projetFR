@@ -10,7 +10,4 @@ public class FilrougeApplication {
 		SpringApplication.run(FilrougeApplication.class, args);
 	}
 
-	
-		
-	
 }

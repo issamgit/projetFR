@@ -1,7 +1,9 @@
 package com.ib.filrouge.model;
 
 import java.util.Collection;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,20 +21,19 @@ public class Theme {
 	private float prix;
 	private int nbjours;
 	@ManyToMany
-	private Collection<Formation> formations;
-	@OneToMany(mappedBy = "theme")
-	private Collection<SousTheme> sousThemes;
+	private List<Formation> formations;
+	@OneToMany(mappedBy = "theme", cascade = CascadeType.ALL)
+	private List<SousTheme> sousThemes;
 	
-	
-	
+
 	public Theme(String intitule, float prix, int nbjours) {
 		
 		this.intitule = intitule;
 		this.prix = prix;
 		this.nbjours = nbjours;
 	}
-	public Theme(String intitule, float prix, int nbjours, Collection<Formation> formations,
-			Collection<SousTheme> sousThemes) {
+	public Theme(String intitule, float prix, int nbjours, List<Formation> formations,
+			List<SousTheme> sousThemes) {
 		
 		this.intitule = intitule;
 		this.prix = prix;
@@ -70,13 +71,13 @@ public class Theme {
 	public Collection<Formation> getFormations() {
 		return formations;
 	}
-	public void setFormations(Collection<Formation> formations) {
+	public void setFormations(List<Formation> formations) {
 		this.formations = formations;
 	}
 	public Collection<SousTheme> getSousThemes() {
 		return sousThemes;
 	}
-	public void setSousThemes(Collection<SousTheme> sousThemes) {
+	public void setSousThemes(List<SousTheme> sousThemes) {
 		this.sousThemes = sousThemes;
 	}
 	

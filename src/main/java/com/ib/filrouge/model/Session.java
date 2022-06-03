@@ -1,20 +1,17 @@
 package com.ib.filrouge.model;
 
 import java.time.LocalDate;
-import java.util.Collection;
+import java.util.List;
 import java.util.List;
 
-import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 public class Session {
@@ -29,22 +26,27 @@ public class Session {
 	private boolean active;
 	@OneToOne
 	private Salle salle;
-	
-	@OneToMany(mappedBy = "session")
-	private Collection<Inscription> inscriptions;
+	@OneToMany(mappedBy = "session",  cascade = CascadeType.ALL)
+	private List<Inscription> inscriptions;
 	@ManyToOne
 	private Formation formation;
+	@OneToMany(mappedBy = "session", cascade = CascadeType.PERSIST)
+	private List<Evaluation> evaluations;
+	@ManyToOne
+	private Formateur formateur;
+	
+	
 	public Salle getSalle() {
 		return salle;
 	}
 	public void setSalle(Salle salle) {
 		this.salle = salle;
 	}
-	public Collection<Evaluation> getCollection() {
-		return collection;
+	public List<Evaluation> getList() {
+		return evaluations;
 	}
-	public void setCollection(Collection<Evaluation> collection) {
-		this.collection = collection;
+	public void setList(List<Evaluation> evaluation) {
+		this.evaluations = evaluation;
 	}
 	public Formateur getFormateur() {
 		return formateur;
@@ -52,10 +54,7 @@ public class Session {
 	public void setFormateur(Formateur formateur) {
 		this.formateur = formateur;
 	}
-	@OneToMany(mappedBy = "session")
-	private Collection<Evaluation> collection;
-	@ManyToOne
-	private Formateur formateur;
+	
 	public Session(LocalDate dateDebut, LocalDate detaFin, boolean isInter, boolean logistique) {
 		
 		this.dateDebut = dateDebut;
@@ -68,24 +67,24 @@ public class Session {
 	}
 	
 	public Session(LocalDate dateDebut, LocalDate detaFin, boolean isInter, boolean logistique,
-			Collection<Inscription> inscriptions) {
-		super();
+			List<Inscription> inscriptions) {
+		
 		this.dateDebut = dateDebut;
 		this.detaFin = detaFin;
 		this.isInter = isInter;
 		this.logistique = logistique;
 		this.inscriptions = inscriptions;
 	}
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public Collection<Inscription> getInscriptions() {
+	public List<Inscription> getInscriptions() {
 		return inscriptions;
 	}
-	public void setInscriptions(Collection<Inscription> inscriptions) {
+	public void setInscriptions(List<Inscription> inscriptions) {
 		this.inscriptions = inscriptions;
 	}
 	public LocalDate getDateDebut() {

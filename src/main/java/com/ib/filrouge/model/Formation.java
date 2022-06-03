@@ -2,6 +2,7 @@ package com.ib.filrouge.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +19,7 @@ public class Formation {
 	private Long id;
 	private float prix;
 	private String contenu;
-	@OneToMany(mappedBy = "formation")
+	@OneToMany(mappedBy = "formation", cascade = CascadeType.ALL)
 	private List<Session> sessions;
 	@ManyToMany(mappedBy = "formations")
 	private List<Theme> themes;
