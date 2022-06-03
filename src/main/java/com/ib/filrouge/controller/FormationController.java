@@ -1,7 +1,7 @@
 package com.ib.filrouge.controller;
 
-import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class FormationController {
 	
 	
 	@GetMapping("/formations")
-	public Collection<Formation> getAllFormation()
+	public List<Formation> getAllFormation()
 	{
 		return formationService.getAll();
 	}

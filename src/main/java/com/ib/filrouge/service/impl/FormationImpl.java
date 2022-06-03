@@ -1,6 +1,7 @@
 package com.ib.filrouge.service.impl;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,7 @@ public class FormationImpl implements FormationService {
 	private FormationRepository formationRepository;
 
 	@Override
-	public Collection<Formation> getAll() {
+	public List<Formation> getAll() {
 		return formationRepository.findAll();
 	}
 

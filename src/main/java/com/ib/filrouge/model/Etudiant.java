@@ -2,10 +2,8 @@ package com.ib.filrouge.model;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
