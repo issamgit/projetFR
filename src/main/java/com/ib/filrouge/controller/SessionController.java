@@ -19,7 +19,7 @@ import com.ib.filrouge.model.Session;
 import com.ib.filrouge.service.SessionService;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/")
 public class SessionController {
 	
 	@Autowired
@@ -50,12 +50,7 @@ public class SessionController {
 	@PutMapping("/sessions/{id}")
 	public ResponseEntity<Session> updateSession(@PathVariable Long id, @RequestBody Session sess)
 	{
-		/*Session Session= new Session();
-		Session= SessionService.selectById(id);
-		Session.setContenu(form.getContenu());
-		Session.setPrix(form.getPrix());
-		 Session.setResponsable(form.getResponsable());
-		Session.setSessions(form.getSessions());*/
+		
 		
 		return ResponseEntity.ok(sessionService.update(id, sess));
 	}

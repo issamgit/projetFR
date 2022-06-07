@@ -32,6 +32,9 @@ public class Responsable extends Personne {
 		this.formations = formations;
 		this.formateurs = formateurs;
 	}
+public Responsable() {
+		
+	}
 
 	public Responsable(Long id, String nom, String prenom, String email, String telephone, LocalDate dateDeNaissance,
 			String motDePasse, List<Formation> formations) {

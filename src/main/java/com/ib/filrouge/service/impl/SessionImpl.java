@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ib.filrouge.model.Formation;
 import com.ib.filrouge.model.Session;
 import com.ib.filrouge.repository.SessionRepository;
 import com.ib.filrouge.service.SessionService;

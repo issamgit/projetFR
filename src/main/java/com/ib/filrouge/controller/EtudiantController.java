@@ -19,7 +19,7 @@ import com.ib.filrouge.model.Session;
 import com.ib.filrouge.service.EtudiantService;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/")
 public class EtudiantController {
 	
 	@Autowired

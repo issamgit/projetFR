@@ -19,7 +19,7 @@ import com.ib.filrouge.model.Formation;
 import com.ib.filrouge.service.FormationService;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/")
 public class FormationController {
 	
 	@Autowired
