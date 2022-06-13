@@ -3,13 +3,16 @@ package com.ib.filrouge.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
+@DiscriminatorValue(value = "ETU")
 public class Etudiant extends Personne {
 
+	
 	
 	private String nomEntreprise;
 	private String adresse;
@@ -24,7 +27,9 @@ public class Etudiant extends Personne {
 	@ManyToOne
 	private Formateur formateur;
 	
-	
+	public Etudiant(String userName, String nom, String prenom, String email, String password) {
+		super(userName, nom, prenom, email, password);
+	}
 	
 	public List<Evaluation> getEvaluations() {
 		return evaluations;
@@ -44,9 +49,7 @@ public class Etudiant extends Personne {
 	public void setFormateur(Formateur formateur) {
 		this.formateur = formateur;
 	}
-	public Etudiant() {
-		
-	}
+	
 	public Etudiant(Long id, String nom, String prenom, String email, String telephone, LocalDate dateDeNaissance,
 			String motDePasse, String nomEntreprise, String adresse, boolean isParticulier, long scorePrerequis) {
 		super(id, nom, prenom, email, telephone, dateDeNaissance, motDePasse);
@@ -62,15 +65,19 @@ public class Etudiant extends Personne {
 		this.nomEntreprise = nomEntreprise;
 	}
 	
-	public Etudiant(Long id, String nom, String prenom, String email, String telephone, LocalDate dateDeNaissance,
-			String motDePasse, String nomEntreprise, String adresse, boolean isParticulier, long scorePrerequis,
-			List<Inscription> inscriptions) {
-		super(id, nom, prenom, email, telephone, dateDeNaissance, motDePasse);
+	
+	public Etudiant(String userName, String nom, String prenom, String email, String password, String nomEntreprise,
+			String adresse, boolean isParticulier, long scorePrerequis, List<Inscription> inscriptions,
+			List<Evaluation> evaluations, Responsable responsable, Formateur formateur) {
+		super(userName, nom, prenom, email, password);
 		this.nomEntreprise = nomEntreprise;
 		this.adresse = adresse;
 		this.isParticulier = isParticulier;
 		this.scorePrerequis = scorePrerequis;
 		this.inscriptions = inscriptions;
+		this.evaluations = evaluations;
+		this.responsable = responsable;
+		this.formateur = formateur;
 	}
 	public String getAdresse() {
 		return adresse;

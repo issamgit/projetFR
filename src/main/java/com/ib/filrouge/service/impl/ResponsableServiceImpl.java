@@ -46,7 +46,7 @@ public class ResponsableServiceImpl  implements ResponsableService{
 		responsable.setFormateurs(resp.getFormateurs());
 		responsable.setEtudiants(resp.getEtudiants());
 		responsable.setFormations(resp.getFormations());
-		responsable.setMotDePasse(resp.getMotDePasse());
+		responsable.setPassword(resp.getPassword());
 		
 		return responsableRepository.save(responsable);
 		

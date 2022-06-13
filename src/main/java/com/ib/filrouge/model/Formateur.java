@@ -3,11 +3,13 @@ package com.ib.filrouge.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
+@DiscriminatorValue(value = "FOR")
 public class Formateur  extends Personne{
 	
 	private long experience;

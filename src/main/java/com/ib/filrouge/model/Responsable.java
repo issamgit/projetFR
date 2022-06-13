@@ -3,10 +3,14 @@ package com.ib.filrouge.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import lombok.val;
+
 @Entity
+@DiscriminatorValue(value = "RES")
 public class Responsable extends Personne {
 
 	@OneToMany(mappedBy = "responsable")
