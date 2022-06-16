@@ -13,27 +13,27 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 	@GetMapping("/all")
 	public String allAccess() {
-		return "Public Content.";
+		return "Espace public.";
 	}
 	
 	@GetMapping("/user")
 	//@PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_RESPONSABLE') or hasRole('ROLE_ADMIN')")
-	@Secured({"ROLE_ADMIN","ROLE_USER","ROLE_RESPONSABLE"})
+	@Secured({"ROLE_RESPONSABLE","ROLE_ETUDIANT","ROLE_FORMATEUR"})
 	public String userAccess() {
-		return "User Content.";
+		return "Espace Etudiant.";
 	}
 
-	@GetMapping("/mod")
+	@GetMapping("/for")
 	//@PreAuthorize("hasRole('RESPONSABLE')")
-	@Secured("ROLE_RESPONSABLE")
+	@Secured("ROLE_FORMATEUR")
 	public String moderatorAccess() {
-		return "Responsable Board.";
+		return " Espace Formateur.";
 	}
 
-	@GetMapping("/admin")
+	@GetMapping("/res")
 	//@PreAuthorize("hasRole('ROLE_ADMIN')")
-	@Secured("ROLE_ADMIN")
+	@Secured("ROLE_RESPONSABLE")
 	public String adminAccess() {
-		return "Admin Board.";
+		return "Espace Responsable.";
 	}
 }

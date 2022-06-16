@@ -15,11 +15,11 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
  
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "TYPE")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//@DiscriminatorColumn(name = "TYPE")
 public  class Personne {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String userName;
 	public Personne(String userName, String nom, String prenom, String email, String password) {

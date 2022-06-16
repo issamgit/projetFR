@@ -48,13 +48,11 @@ public class SessionImpl  implements SessionService{
 		s.setInscriptions(session.getInscriptions());
 		return sessionRepository.save(s);
 		
-		
 	}
 
 	@Override
 	public void delete(Long id) {
 		sessionRepository.deleteById(id);
-		
 	}
 
 }

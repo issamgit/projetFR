@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 import lombok.val;
 
 @Entity
-@DiscriminatorValue(value = "RES")
+//@DiscriminatorValue(value = "RES")
 public class Responsable extends Personne {
 
 	@OneToMany(mappedBy = "responsable")

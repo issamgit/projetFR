@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-@DiscriminatorValue(value = "FOR")
+//@DiscriminatorValue(value = "FOR")
 public class Formateur  extends Personne{
 	
 	private long experience;

@@ -1,8 +1,8 @@
 package com.ib.filrouge.model;
 
 public enum ERole {
-	ROLE_USER,
+	ROLE_ETUDIANT,
     ROLE_RESPONSABLE,
-    ROLE_ADMIN
+    ROLE_FORMATEUR
 }
 

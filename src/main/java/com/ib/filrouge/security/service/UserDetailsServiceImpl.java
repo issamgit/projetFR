@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ib.filrouge.model.Etudiant;
 import com.ib.filrouge.model.Personne;
 import com.ib.filrouge.repository.PersonneRepository;
 

@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-@DiscriminatorValue(value = "ETU")
+//@DiscriminatorValue(value = "ETU")
 public class Etudiant extends Personne {
 
 	
